@@ -10,3 +10,10 @@ SELECT * FROM empleados;
 SELECT nombre, salario FROM empleados
 WHERE salario > 3000;
 
+
+-- ORDENAR RESULTADOS (ORDER BY)
+
+-- Muestra todos los productos ordenados por precio de forma descendente.
+-- Displays all products ordered by price in descending order.
+SELECT * FROM productos
+ORDER BY precio DESC;
