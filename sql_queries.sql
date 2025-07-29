@@ -17,3 +17,32 @@ WHERE salario > 3000;
 -- Displays all products ordered by price in descending order.
 SELECT * FROM productos
 ORDER BY precio DESC;
+
+
+-- FUNCIONES AGREGADAS Y AGRUPAMIENTO (GROUP BY, COUNT, AVG, SUM)
+
+-- Cuenta cuántos empleados hay en total.
+-- Counts how many employees there are in total.
+SELECT COUNT(*) AS total_empleados FROM empleados;
+
+-- Calcula el salario medio de todos los empleados.
+-- Calculates the average salary of all employees.
+SELECT AVG(salario) AS salario_medio FROM empleados;
+
+-- Suma el importe total de las ventas realizadas.
+-- Sums the total amount of sales made.
+SELECT SUM(importe) AS total_ventas FROM ventas;
+
+-- Muestra el número de empleados por departamento.
+-- Displays the number of employees per department.
+SELECT departamento, COUNT(*) AS numero_empleados
+FROM empleados
+GROUP BY departamento;
+
+-- Muestra el salario medio por departamento.
+-- Shows the average salary per department.
+SELECT departamento, AVG(salario) AS salario_medio
+FROM empleados
+GROUP BY departamento;
+
+
