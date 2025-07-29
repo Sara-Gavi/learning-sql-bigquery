@@ -45,4 +45,20 @@ SELECT departamento, AVG(salario) AS salario_medio
 FROM empleados
 GROUP BY departamento;
 
+-- JOIN
+-- Une empleados con sus departamentos y muestra nombre del empleado y nombre del departamento.
+SELECT empleados.nombre, departamentos.nombre AS departamento
+FROM empleados
+INNER JOIN departamentos ON empleados.departamento_id = departamentos.id;
+
+-- Muestra todos los empleados y, si existen, sus proyectos asignados.
+SELECT empleados.nombre, proyectos.nombre AS proyecto
+FROM empleados
+LEFT JOIN proyectos ON empleados.id = proyectos.empleado_id;
+
+-- Muestra los productos y los proveedores correspondientes.
+SELECT productos.nombre AS producto, proveedores.nombre AS proveedor
+FROM productos
+INNER JOIN proveedores ON productos.proveedor_id = proveedores.id;
+
 
