@@ -79,3 +79,19 @@ SELECT id_venta, importe,
   END AS tipo_venta
 FROM ventas;
 
+-- CONSULTAS CON FUNCIONES DE FECHA
+-- Muestra las ventas realizadas en el año 2024.
+SELECT * FROM ventas
+WHERE EXTRACT(YEAR FROM fecha) = 2024;
+
+-- Muestra empleados contratados en los últimos 6 meses.
+SELECT * FROM empleados
+WHERE fecha_contratacion >= DATE_SUB(CURRENT_DATE(), INTERVAL 6 MONTH);
+
+-- Agrupa ventas por mes y muestra el total mensual.
+SELECT
+  FORMAT_DATE('%Y-%m', fecha) AS mes,
+  SUM(importe) AS total_mensual
+FROM ventas
+GROUP BY mes
+ORDER BY mes;
