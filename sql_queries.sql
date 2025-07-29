@@ -61,4 +61,21 @@ SELECT productos.nombre AS producto, proveedores.nombre AS proveedor
 FROM productos
 INNER JOIN proveedores ON productos.proveedor_id = proveedores.id;
 
+-- CASE
+-- Clasifica empleados según su salario.
+SELECT nombre,
+  CASE
+    WHEN salario >= 4000 THEN 'Alto'
+    WHEN salario BETWEEN 2000 AND 3999 THEN 'Medio'
+    ELSE 'Bajo'
+  END AS nivel_salarial
+FROM empleados;
+
+-- Marca ventas como "alta" o "baja" según el importe.
+SELECT id_venta, importe,
+  CASE
+    WHEN importe >= 1000 THEN 'Alta'
+    ELSE 'Baja'
+  END AS tipo_venta
+FROM ventas;
 
