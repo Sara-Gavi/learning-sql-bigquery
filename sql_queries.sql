@@ -172,3 +172,35 @@ WHERE departamento_id = (
   ORDER BY COUNT(*) DESC
   LIMIT 1
 );
+
+-- CREAR TABLAS E INSERTAR DATOS (CREATE TABLE & INSERT INTO)
+-- CREATING TABLES AND INSERTING DATA
+
+-- Crea una tabla de empleados.
+-- Creates an employees table.
+CREATE TABLE empleados (
+  id INT,
+  nombre STRING,
+  salario FLOAT64,
+  departamento_id INT,
+  fecha_contratacion DATE
+);
+
+-- Inserta algunos empleados de ejemplo.
+-- Inserts sample employees.
+INSERT INTO empleados (id, nombre, salario, departamento_id, fecha_contratacion)
+VALUES
+  (1, 'Laura Pérez', 2500, 1, '2023-03-15'),
+  (2, 'Carlos Gómez', 3200, 2, '2022-11-20'),
+  (3, 'María Sánchez', 1800, 1, '2024-01-10'),
+  (4, 'David Ruiz', 4000, 3, '2021-07-01');
+
+-- Crea una tabla de departamentos.
+-- Creates a departments table.
+CREATE TABLE departamentos (
+  id INT,
+  nombre STRING
+);
+
+-- Inserta algunos departamentos de ejemplo.
+-- Ins
