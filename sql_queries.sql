@@ -129,3 +129,46 @@ SELECT nombre, salario
 FROM empleados
 ORDER BY salario DESC
 LIMIT 5;
+
+-- SUBCONSULTAS BÁSICAS (SUBQUERIES)
+-- BASIC SUBQUERIES
+
+-- Muestra empleados cuyo salario es mayor que el salario medio.
+-- Shows employees whose salary is greater than the average salary.
+SELECT nombre, salario
+FROM empleados
+WHERE salario > (
+  SELECT AVG(salario)
+  FROM empleados
+);
+
+-- Muestra productos cuyo precio es igual al precio más alto.
+-- Shows products with the highest price.
+SELECT nombre, precio
+FROM productos
+WHERE precio = (
+  SELECT MAX(precio)
+  FROM productos
+);
+
+-- Muestra ventas realizadas por el cliente con ID 123.
+-- Shows sales made by the client with ID 123.
+SELECT *
+FROM ventas
+WHERE cliente_id = (
+  SELECT id
+  FROM clientes
+  WHERE id = 123
+);
+
+-- Muestra empleados del departamento que tiene más empleados.
+-- Shows employees from the department with the most employees.
+SELECT *
+FROM empleados
+WHERE departamento_id = (
+  SELECT departamento_id
+  FROM empleados
+  GROUP BY departamento_id
+  ORDER BY COUNT(*) DESC
+  LIMIT 1
+);
