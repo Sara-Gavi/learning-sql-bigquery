@@ -95,3 +95,37 @@ SELECT
 FROM ventas
 GROUP BY mes
 ORDER BY mes;
+
+-- FILTRADO BÁSICO CON OPERADORES (BETWEEN, IN, LIKE, LIMIT)
+-- BASIC FILTERING WITH OPERATORS (BETWEEN, IN, LIKE, LIMIT)
+
+-- Filtra empleados cuyo salario esté entre 2000 y 4000.
+-- Filters employees whose salary is between 2000 and 4000.
+SELECT nombre, salario
+FROM empleados
+WHERE salario BETWEEN 2000 AND 4000;
+
+-- Muestra productos que pertenecen a ciertas categorías.
+-- Shows products that belong to specific categories.
+SELECT nombre, categoria
+FROM productos
+WHERE categoria IN ('Electrónica', 'Hogar', 'Juguetes');
+
+-- Busca clientes cuyo nombre comience por 'Mar'.
+-- Searches for clients whose name starts with 'Mar'.
+SELECT nombre
+FROM clientes
+WHERE nombre LIKE 'Mar%';
+
+-- Busca productos que contengan la palabra 'portátil' en su descripción.
+-- Searches for products that contain the word 'portátil' in their description.
+SELECT nombre, descripcion
+FROM productos
+WHERE descripcion LIKE '%portátil%';
+
+-- Muestra los 5 empleados con mayor salario.
+-- Displays the 5 employees with the highest salary.
+SELECT nombre, salario
+FROM empleados
+ORDER BY salario DESC
+LIMIT 5;
