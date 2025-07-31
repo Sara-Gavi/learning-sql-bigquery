@@ -204,3 +204,26 @@ CREATE TABLE departamentos (
 
 -- Inserta algunos departamentos de ejemplo.
 -- Ins
+
+-- FUNCIONES MATEMÁTICAS BÁSICAS (ROUND, ABS, CEIL, FLOOR)
+-- BASIC MATH FUNCTIONS (ROUND, ABS, CEIL, FLOOR)
+
+-- Redondea el salario de cada empleado a 0 decimales.
+-- Rounds each employee's salary to 0 decimal places.
+SELECT nombre, ROUND(salario) AS salario_redondeado
+FROM empleados;
+
+-- Muestra el valor absoluto de las diferencias salariales con respecto a 3000.
+-- Shows the absolute difference between salaries and 3000.
+SELECT nombre, ABS(salario - 3000) AS diferencia
+FROM empleados;
+
+-- Muestra el salario redondeado hacia arriba.
+-- Shows the salary rounded up.
+SELECT nombre, CEIL(salario) AS salario_arriba
+FROM empleados;
+
+-- Muestra el salario redondeado hacia abajo.
+-- Shows the salary rounded down.
+SELECT nombre, FLOOR(salario) AS salario_abajo
+FROM empleados;
